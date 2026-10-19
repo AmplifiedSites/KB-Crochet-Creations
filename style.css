@@ -1,7 +1,5 @@
-
 /* ==========================================
-   GLOBAL VARIABLES
-   CHANGE COLORS FOR OTHER BUSINESSES
+START OF INDEX PAGE
 ========================================== */
 
 :root {
@@ -14,13 +12,12 @@
     --accent-light: #b95a78;
     --line: #c7738a;
 
-    --font-body: 'DM Sans', sans-serif;
-    --font-script: 'Great Vibes', cursive;
-    --font-display: 'Playfair Display', serif;
+    --font-body: "DM Sans", sans-serif;
+    --font-script: "Great Vibes", cursive;
+    --font-display: "Playfair Display", serif;
 
     --container: 1180px;
 }
-
 
 /* ==========================================
    RESET
@@ -51,7 +48,6 @@ a {
     color: inherit;
 }
 
-
 /* ==========================================
    HERO SECTION
 ========================================== */
@@ -68,8 +64,7 @@ a {
     position: relative;
     z-index: 1;
 
-    padding: 90px 25px 70px
-        max(35px, calc((100vw - var(--container)) / 2));
+    padding: 90px 25px 70px max(35px, calc((100vw - var(--container)) / 2));
 
     text-align: center;
 
@@ -98,7 +93,6 @@ a {
     letter-spacing: 0.38em;
 }
 
-
 /* ==========================================
    DECORATIVE LINE
 ========================================== */
@@ -121,7 +115,6 @@ a {
     background: var(--line);
     flex: 1;
 }
-
 
 /* ==========================================
    TEXT STYLES
@@ -156,7 +149,6 @@ a {
     color: var(--accent);
 }
 
-
 /* ==========================================
    HERO IMAGE
 ========================================== */
@@ -164,19 +156,12 @@ a {
 .hero-media {
     min-height: 580px;
 
-    background-image:
-        linear-gradient(
-            90deg,
-            #faf3ee 0%,
-            rgba(250,243,238,0.1) 16%,
-            transparent 38%
-        ),
+    background-image: linear-gradient(90deg, #faf3ee 0%, rgba(250, 243, 238, 0.1) 16%, transparent 38%),
         url("assets/photo-1.png");
 
     background-position: center;
     background-size: cover;
 }
-
 
 /* ==========================================
    GENERAL SECTIONS
@@ -187,7 +172,6 @@ a {
     margin: 0 auto;
     padding: 55px 28px;
 }
-
 
 /* ==========================================
    ABOUT SECTION
@@ -205,8 +189,7 @@ a {
     overflow: hidden;
     border-radius: 6px;
 
-    box-shadow: 0 12px 32px
-        rgba(96, 49, 51, 0.10);
+    box-shadow: 0 12px 32px rgba(96, 49, 51, 0.1);
 }
 
 .about-media img {
@@ -244,7 +227,6 @@ a {
     margin-top: 25px;
 }
 
-
 /* ==========================================
    CUSTOM ORDERS + CONTACT LAYOUT
 ========================================== */
@@ -258,7 +240,6 @@ a {
     padding-top: 20px;
     padding-bottom: 40px;
 }
-
 
 /* ==========================================
    CUSTOM ORDERS
@@ -289,15 +270,13 @@ a {
 
     border: 9px solid white;
 
-    box-shadow: 0 8px 22px
-        rgba(66, 30, 42, 0.15);
+    box-shadow: 0 8px 22px rgba(66, 30, 42, 0.15);
 }
 
 .orders-media img {
     aspect-ratio: 0.86;
     object-fit: cover;
 }
-
 
 /* ==========================================
    CONTACT PANEL
@@ -308,8 +287,7 @@ a {
     border-radius: 22px;
     padding: 28px;
 
-    box-shadow: 0 12px 35px
-        rgba(102, 45, 68, 0.08);
+    box-shadow: 0 12px 35px rgba(102, 45, 68, 0.08);
 }
 
 .contact-panel .script-heading {
@@ -320,7 +298,6 @@ a {
     margin: 0 0 12px;
     font-size: 0.85rem;
 }
-
 
 /* ==========================================
    CONTACT FORM
@@ -364,7 +341,6 @@ a {
     outline-offset: 1px;
 }
 
-
 /* ==========================================
    SEND MESSAGE BUTTON
 ========================================== */
@@ -388,7 +364,6 @@ a {
     background: var(--accent);
 }
 
-
 /* ==========================================
    FOOTER
 ========================================== */
@@ -408,7 +383,6 @@ a {
 .site-footer .script-heading {
     font-size: 3.4rem;
 }
-
 
 /* ==========================================
    SOCIAL MEDIA
@@ -441,12 +415,7 @@ a {
 }
 
 .social-instagram {
-    background: linear-gradient(
-        35deg,
-        #f8b833,
-        #e72767,
-        #8d2ae8
-    );
+    background: linear-gradient(35deg, #f8b833, #e72767, #8d2ae8);
 }
 
 .social-facebook {
@@ -457,13 +426,11 @@ a {
     font-size: 0.78rem;
 }
 
-
 /* ==========================================
    TABLET RESPONSIVENESS
 ========================================== */
 
 @media (max-width: 900px) {
-
     .hero {
         grid-template-columns: 1fr 1fr;
         min-height: 480px;
@@ -502,16 +469,13 @@ a {
         width: min(100%, 650px);
         margin: 0 auto;
     }
-
 }
-
 
 /* ==========================================
    MOBILE RESPONSIVENESS
 ========================================== */
 
 @media (max-width: 600px) {
-
     .hero {
         display: flex;
         flex-direction: column-reverse;
@@ -582,16 +546,13 @@ a {
     .site-footer {
         padding: 0 20px 25px;
     }
-
 }
-
 
 /* ==========================================
    SMALL MOBILE SCREENS
 ========================================== */
 
 @media (max-width: 400px) {
-
     .orders-content {
         grid-template-columns: 1fr;
     }
@@ -604,5 +565,252 @@ a {
     .form-grid {
         grid-template-columns: 1fr;
     }
-
 }
+/* ==========================================
+END OF INDEX PAGE
+========================================== */
+
+/* ==========================================
+START OF THANK YOU PAGE
+========================================== */
+.thank-you-page {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    background: radial-gradient(circle at 50% 15%, #fffaf7 0%, #fcf7f3 55%, #f8eee9 100%);
+}
+
+/* ==========================================
+   THANK YOU CARD
+========================================== */
+
+.thank-you-card {
+    width: 100%;
+    max-width: 650px;
+
+    padding: 55px 55px 45px;
+
+    background: var(--surface);
+
+    border: 1px solid rgba(120, 32, 69, 0.12);
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 18px 55px rgba(80, 36, 52, 0.08);
+}
+
+/* ==========================================
+   DECORATIVE HEART
+========================================== */
+
+.thank-you-symbol {
+    width: 78px;
+    height: 78px;
+
+    margin: 0 auto 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--line);
+    border-radius: 50%;
+
+    color: var(--accent);
+
+    font-size: 3.5rem;
+    line-height: 1;
+}
+
+/* ==========================================
+   SMALL HEADING
+========================================== */
+
+.thank-you-eyebrow {
+    margin: 0 0 12px;
+
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+
+    color: var(--accent);
+}
+
+/* ==========================================
+   MAIN TITLE
+========================================== */
+
+.thank-you-title {
+    margin: 0;
+
+    font-family: var(--font-script);
+    font-size: clamp(5rem, 10vw, 7.5rem);
+    font-weight: 400;
+
+    line-height: 1.15;
+
+    color: var(--accent);
+}
+
+/* ==========================================
+   DECORATIVE DIVIDER
+========================================== */
+
+.thank-you-divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin: 10px auto 25px;
+
+    max-width: 360px;
+
+    color: var(--line);
+    font-size: 2rem;
+}
+
+.thank-you-divider::before,
+.thank-you-divider::after {
+    content: "";
+
+    flex: 1;
+    height: 1px;
+
+    background: var(--line);
+}
+
+/* ==========================================
+   SUBTITLE
+========================================== */
+
+.thank-you-subtitle {
+    margin: 0 0 15px;
+
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: 500;
+
+    color: var(--text);
+}
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+
+.thank-you-description {
+    max-width: 460px;
+
+    margin: 0 auto 30px;
+
+    font-size: 1rem;
+    line-height: 1.85;
+
+    color: #55505a;
+}
+
+/* ==========================================
+   BACK HOME BUTTON
+========================================== */
+
+.thank-you-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    min-height: 50px;
+
+    padding: 12px 32px;
+
+    background: var(--accent);
+    color: white;
+
+    border-radius: 6px;
+
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.thank-you-button:hover {
+    background: var(--accent-light);
+    transform: translateY(-2px);
+}
+
+.thank-you-button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+/* ==========================================
+   BOTTOM NOTE
+========================================== */
+
+.thank-you-note {
+    margin: 30px 0 0;
+
+    font-family: var(--font-script);
+    font-size: 2.1rem;
+
+    color: var(--accent-light);
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+========================================== */
+
+@media (max-width: 600px) {
+    .thank-you-page {
+        padding: 25px 15px;
+    }
+
+    .thank-you-card {
+        padding: 42px 22px 35px;
+        border-radius: 14px;
+    }
+
+    .thank-you-symbol {
+        width: 65px;
+        height: 65px;
+        font-size: 3rem;
+    }
+
+    .thank-you-title {
+        font-size: clamp(4.5rem, 16vw, 6rem);
+    }
+
+    .thank-you-eyebrow {
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+    }
+
+    .thank-you-description {
+        font-size: 0.92rem;
+    }
+
+    .thank-you-button {
+        width: 100%;
+    }
+
+    .thank-you-note {
+        font-size: 1.9rem;
+    }
+}
+
+/* ==========================================
+   END OF THANK YOU PAGE
+========================================== */
