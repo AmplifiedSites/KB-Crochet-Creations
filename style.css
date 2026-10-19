@@ -1,12 +1,21 @@
+
 /* ==========================================
-START OF INDEX PAGE
+   KB CROCHET CREATIONS
+   COMPLETE WEBSITE STYLESHEET
+========================================== */
+
+
+/* ==========================================
+   GLOBAL VARIABLES
 ========================================== */
 
 :root {
     --background: #fcf7f3;
     --surface: #fffaf7;
+    --hero-background: #faf3ee;
 
     --text: #25232a;
+    --muted: #55505a;
 
     --accent: #782045;
     --accent-light: #b95a78;
@@ -19,11 +28,14 @@ START OF INDEX PAGE
     --container: 1180px;
 }
 
+
 /* ==========================================
    RESET
 ========================================== */
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -33,68 +45,103 @@ html {
 
 body {
     margin: 0;
+    min-width: 0;
     background: var(--background);
     color: var(--text);
     font-family: var(--font-body);
     line-height: 1.6;
 }
 
+main {
+    width: 100%;
+}
+
 img {
     display: block;
     width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 a {
     color: inherit;
 }
 
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+
+/* ==========================================
+   START OF INDEX PAGE
+========================================== */
+
+
 /* ==========================================
    HERO SECTION
 ========================================== */
 
 .hero {
+    width: 100%;
     min-height: 580px;
+
     display: grid;
     grid-template-columns: 53% 47%;
+
     overflow: hidden;
-    background: #faf3ee;
+    background: var(--hero-background);
 }
 
 .hero-copy {
     position: relative;
     z-index: 1;
 
-    padding: 90px 25px 70px max(35px, calc((100vw - var(--container)) / 2));
+    min-width: 0;
 
-    text-align: center;
+    padding: 70px 25px 70px
+        max(35px, calc((100vw - var(--container)) / 2));
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    text-align: center;
 }
+
+
+/* ==========================================
+   BRAND TITLE
+========================================== */
 
 .brand-script {
     margin: 0;
-    color: var(--accent);
 
+    color: var(--accent);
     font-family: var(--font-script);
+
     font-size: clamp(5rem, 10vw, 9rem);
     font-weight: 400;
-    line-height: 0.95;
+    line-height: 1.05;
+
     white-space: nowrap;
 }
 
 .brand-subtitle {
-    margin: 12px 0;
+    margin: 8px 0 12px;
 
     font-family: var(--font-display);
     font-size: clamp(1.15rem, 2.7vw, 2rem);
+    font-weight: 400;
+
     letter-spacing: 0.38em;
 }
 
+
 /* ==========================================
-   DECORATIVE LINE
+   DECORATIVE HEART DIVIDER
 ========================================== */
 
 .decorated-rule {
@@ -103,18 +150,21 @@ a {
     gap: 12px;
 
     width: 100%;
-    color: var(--line);
 
+    color: var(--line);
     font-size: 2.4rem;
 }
 
 .decorated-rule::before,
 .decorated-rule::after {
     content: "";
-    height: 1px;
-    background: var(--line);
+
     flex: 1;
+    height: 1px;
+
+    background: var(--line);
 }
+
 
 /* ==========================================
    TEXT STYLES
@@ -122,56 +172,79 @@ a {
 
 .eyebrow {
     font-size: 0.76rem;
-    letter-spacing: 0.26em;
     font-weight: 500;
+    letter-spacing: 0.26em;
 }
 
 .hero-eyebrow {
     margin: 10px 0 6px;
+
     font-size: 0.94rem;
     letter-spacing: 0.38em;
 }
 
 .hero-description {
-    font-size: clamp(0.98rem, 1.5vw, 1.12rem);
     max-width: 460px;
+
     margin: 12px 0 22px;
+
+    font-size: clamp(0.98rem, 1.5vw, 1.12rem);
+    line-height: 1.7;
 }
 
 .script-link {
     color: #a32d62;
+
     font-family: var(--font-script);
     font-size: clamp(2rem, 3.6vw, 3.2rem);
+    line-height: 1.25;
+
     text-decoration: none;
+
+    transition: color 0.2s ease;
 }
 
 .script-link:hover {
     color: var(--accent);
 }
 
+
 /* ==========================================
-   HERO IMAGE
+   HERO BACKGROUND IMAGE
 ========================================== */
 
 .hero-media {
+    width: 100%;
+    min-width: 0;
     min-height: 580px;
 
-    background-image: linear-gradient(90deg, #faf3ee 0%, rgba(250, 243, 238, 0.1) 16%, transparent 38%),
+    background-image:
+        linear-gradient(
+            90deg,
+            #faf3ee 0%,
+            rgba(250, 243, 238, 0.1) 16%,
+            transparent 38%
+        ),
         url("crochet-photo-1.png");
 
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
 }
+
 
 /* ==========================================
    GENERAL SECTIONS
 ========================================== */
 
 .section {
+    width: 100%;
     max-width: var(--container);
+
     margin: 0 auto;
     padding: 55px 28px;
 }
+
 
 /* ==========================================
    ABOUT SECTION
@@ -184,15 +257,23 @@ a {
     align-items: center;
 }
 
+.about-media,
+.about-copy {
+    min-width: 0;
+}
+
 .image-frame {
     position: relative;
     overflow: hidden;
+
     border-radius: 6px;
 
-    box-shadow: 0 12px 32px rgba(96, 49, 51, 0.1);
+    box-shadow:
+        0 12px 32px rgba(96, 49, 51, 0.10);
 }
 
 .about-media img {
+    width: 100%;
     aspect-ratio: 1.35;
     object-fit: cover;
 }
@@ -205,10 +286,11 @@ a {
     margin: 0;
 
     color: var(--accent);
+
     font-family: var(--font-script);
     font-size: clamp(2.8rem, 5vw, 4.7rem);
     font-weight: 400;
-    line-height: 1.02;
+    line-height: 1.15;
 }
 
 .heading-line {
@@ -216,16 +298,19 @@ a {
 }
 
 .about-copy p:not(.eyebrow) {
-    font-size: 1.05rem;
     max-width: 410px;
+    font-size: 1.05rem;
 }
 
 .accent-line {
-    height: 1px;
-    background: var(--line);
     width: 78%;
+    height: 1px;
+
     margin-top: 25px;
+
+    background: var(--line);
 }
+
 
 /* ==========================================
    CUSTOM ORDERS + CONTACT LAYOUT
@@ -233,7 +318,7 @@ a {
 
 .lower-section {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     gap: 35px;
     align-items: start;
 
@@ -241,16 +326,25 @@ a {
     padding-bottom: 40px;
 }
 
+
 /* ==========================================
    CUSTOM ORDERS
 ========================================== */
 
 .orders-content {
+    min-width: 0;
+
     display: grid;
-    grid-template-columns: 0.9fr 1fr;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
     gap: 20px;
     align-items: center;
+
     padding-top: 35px;
+}
+
+.orders-copy,
+.orders-media {
+    min-width: 0;
 }
 
 .orders-copy .eyebrow {
@@ -263,6 +357,7 @@ a {
 
 .orders-copy p:last-child {
     font-size: 0.9rem;
+    line-height: 1.7;
 }
 
 .orders-media {
@@ -270,24 +365,31 @@ a {
 
     border: 9px solid white;
 
-    box-shadow: 0 8px 22px rgba(66, 30, 42, 0.15);
+    box-shadow:
+        0 8px 22px rgba(66, 30, 42, 0.15);
 }
 
 .orders-media img {
+    width: 100%;
     aspect-ratio: 0.86;
     object-fit: cover;
 }
+
 
 /* ==========================================
    CONTACT PANEL
 ========================================== */
 
 .contact-panel {
+    min-width: 0;
+
     background: var(--surface);
+
     border-radius: 22px;
     padding: 28px;
 
-    box-shadow: 0 12px 35px rgba(102, 45, 68, 0.08);
+    box-shadow:
+        0 12px 35px rgba(102, 45, 68, 0.08);
 }
 
 .contact-panel .script-heading {
@@ -296,8 +398,11 @@ a {
 
 .contact-panel > p {
     margin: 0 0 12px;
+
     font-size: 0.85rem;
+    line-height: 1.7;
 }
+
 
 /* ==========================================
    CONTACT FORM
@@ -310,11 +415,11 @@ a {
 
 .form-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 9px;
 }
 
-.contact-form input,
+.contact-form input:not([type="hidden"]),
 .contact-form textarea {
     width: 100%;
     min-width: 0;
@@ -323,11 +428,12 @@ a {
     border-radius: 4px;
 
     padding: 11px 12px;
+
     background: white;
+    color: var(--text);
 
     font-family: var(--font-body);
-    font-size: 0.82rem;
-    color: var(--text);
+    font-size: 16px;
 }
 
 .contact-form textarea {
@@ -341,38 +447,62 @@ a {
     outline-offset: 1px;
 }
 
+/* KEEP FORMSUBMIT HONEYPOT HIDDEN */
+
+.contact-form input[name="_honey"] {
+    display: none;
+}
+
+
 /* ==========================================
    SEND MESSAGE BUTTON
 ========================================== */
 
 .primary-button {
+    width: 100%;
+    min-height: 48px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 12px 20px;
+
     background: #a44770;
-    border: none;
     color: white;
 
+    border: none;
     border-radius: 6px;
-    min-height: 48px;
 
     cursor: pointer;
 
     font-family: var(--font-body);
     font-size: 1rem;
     font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
 .primary-button:hover {
     background: var(--accent);
+    transform: translateY(-1px);
 }
+
 
 /* ==========================================
    FOOTER
 ========================================== */
 
 .site-footer {
+    width: 100%;
     max-width: var(--container);
-    margin: 0 auto;
 
+    margin: 0 auto;
     padding: 0 28px 30px;
+
     text-align: center;
 }
 
@@ -384,30 +514,40 @@ a {
     font-size: 3.4rem;
 }
 
+
 /* ==========================================
    SOCIAL MEDIA
 ========================================== */
 
 .social-links {
     display: flex;
+    align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 22px;
 
     margin: 14px 0 22px;
 }
 
 .social {
-    display: grid;
-    place-items: center;
-
     width: 58px;
     height: 58px;
+
+    display: grid;
+    place-items: center;
 
     border-radius: 50%;
 
     color: white;
     font-size: 2rem;
+
     text-decoration: none;
+
+    transition: transform 0.2s ease;
+}
+
+.social:hover {
+    transform: translateY(-3px);
 }
 
 .social-tiktok {
@@ -415,7 +555,12 @@ a {
 }
 
 .social-instagram {
-    background: linear-gradient(35deg, #f8b833, #e72767, #8d2ae8);
+    background: linear-gradient(
+        35deg,
+        #f8b833,
+        #e72767,
+        #8d2ae8
+    );
 }
 
 .social-facebook {
@@ -423,29 +568,42 @@ a {
 }
 
 .copyright {
+    margin: 8px 0;
     font-size: 0.78rem;
 }
 
+.copyright a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.copyright a:hover {
+    text-decoration: underline;
+}
+
+
 /* ==========================================
    TABLET RESPONSIVENESS
+   601px - 900px
 ========================================== */
 
 @media (max-width: 900px) {
+
     .hero {
-        grid-template-columns: 1fr 1fr;
-        min-height: 480px;
+        grid-template-columns: 52% 48%;
+        min-height: 450px;
     }
 
     .hero-copy {
-        padding: 55px 20px;
+        padding: 45px 20px;
     }
 
     .hero-media {
-        min-height: 480px;
+        min-height: 450px;
     }
 
     .brand-script {
-        font-size: clamp(4rem, 9vw, 7rem);
+        font-size: clamp(4rem, 8vw, 6.5rem);
     }
 
     .brand-subtitle {
@@ -458,121 +616,325 @@ a {
 
     .lower-section {
         grid-template-columns: 1fr;
+        gap: 30px;
     }
 
     .orders-content {
+        width: 100%;
         max-width: 700px;
+
         margin: 0 auto;
+        padding-top: 10px;
     }
 
     .contact-panel {
         width: min(100%, 650px);
         margin: 0 auto;
     }
+
 }
+
 
 /* ==========================================
    MOBILE RESPONSIVENESS
+   600px AND BELOW
 ========================================== */
 
 @media (max-width: 600px) {
+
+    /* ======================================
+       HERO - REMOVE EMPTY SPACE
+    ====================================== */
+
     .hero {
         display: flex;
-        flex-direction: column-reverse;
-    }
+        flex-direction: column;
 
-    .hero-media {
-        min-height: 360px;
-        background-image: url("assets/photo-1.png");
-        background-position: center 43%;
+        width: 100%;
+        min-height: 0;
+        height: auto;
     }
 
     .hero-copy {
-        padding: 36px 20px 44px;
+        flex: 0 0 auto;
+
+        width: 100%;
+        min-height: 0;
+        height: auto;
+
+        padding: 20px 18px 25px;
+
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
     }
 
     .brand-script {
-        font-size: clamp(4.8rem, 17vw, 7rem);
+        margin: 0;
+
+        font-size: clamp(4rem, 15vw, 6rem);
+        line-height: 1.1;
+
         white-space: normal;
     }
 
     .brand-subtitle {
-        font-size: 1.2rem;
+        margin: 5px 0 10px;
+
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+    }
+
+    .hero-copy .decorated-rule {
+        margin: 0;
     }
 
     .hero-eyebrow {
-        font-size: 0.78rem;
-        letter-spacing: 0.22em;
+        margin: 10px 0 5px;
+
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
     }
+
+    .hero-description {
+        max-width: 440px;
+
+        margin: 10px 0 15px;
+
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+
+    .script-link {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        line-height: 1.3;
+    }
+
+
+    /* ======================================
+       HERO IMAGE - FIT MOBILE SCREEN
+    ====================================== */
+
+    .hero-media {
+        flex: 0 0 auto;
+
+        width: 100%;
+        min-height: 0;
+        height: clamp(220px, 65vw, 340px);
+
+        background-image: url("crochet-photo-1.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+
+    /* ======================================
+       GENERAL SECTIONS
+    ====================================== */
 
     .section {
-        padding: 35px 20px;
+        width: 100%;
+        padding: 35px 18px;
     }
 
+
+    /* ======================================
+       ABOUT SECTION
+    ====================================== */
+
     .about-section {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
         gap: 25px;
+    }
+
+    .about-media img {
+        width: 100%;
+        aspect-ratio: 1.35;
+        object-fit: cover;
     }
 
     .about-copy {
         text-align: center;
     }
 
+    .about-copy .eyebrow {
+        font-size: 0.72rem;
+    }
+
     .about-copy p:not(.eyebrow) {
-        max-width: none;
+        max-width: 100%;
+        font-size: 0.95rem;
+    }
+
+    .script-heading {
+        font-size: clamp(2.8rem, 10vw, 4rem);
     }
 
     .accent-line {
         margin: 22px auto 0;
     }
 
+
+    /* ======================================
+       CUSTOM ORDERS
+    ====================================== */
+
+    .lower-section {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+    }
+
     .orders-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
+        width: 100%;
+        max-width: 100%;
+
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+
+        padding-top: 0;
+    }
+
+    .orders-copy {
+        text-align: center;
     }
 
     .orders-copy .script-heading {
-        font-size: 2.8rem;
+        font-size: clamp(2.8rem, 10vw, 4rem);
     }
 
     .orders-copy p:last-child {
-        font-size: 0.78rem;
-    }
-
-    .contact-panel {
-        padding: 23px 18px;
-    }
-
-    .site-footer {
-        padding: 0 20px 25px;
-    }
-}
-
-/* ==========================================
-   SMALL MOBILE SCREENS
-========================================== */
-
-@media (max-width: 400px) {
-    .orders-content {
-        grid-template-columns: 1fr;
+        font-size: 0.95rem;
     }
 
     .orders-media {
-        width: 75%;
+        width: min(85%, 330px);
+
         margin: 0 auto;
+
+        transform: rotate(-3deg);
+    }
+
+    .orders-media img {
+        width: 100%;
+        aspect-ratio: 0.95;
+        object-fit: cover;
+    }
+
+
+    /* ======================================
+       CONTACT FORM
+    ====================================== */
+
+    .contact-panel {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 25px 18px;
+        border-radius: 15px;
+    }
+
+    .contact-panel .script-heading {
+        font-size: clamp(3rem, 11vw, 4rem);
+    }
+
+    .contact-panel > p {
+        font-size: 0.9rem;
     }
 
     .form-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
+
+    .contact-form input:not([type="hidden"]),
+    .contact-form textarea {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .primary-button {
+        width: 100%;
+        min-height: 48px;
+    }
+
+
+    /* ======================================
+       FOOTER
+    ====================================== */
+
+    .site-footer {
+        width: 100%;
+        padding: 10px 18px 30px;
+    }
+
+    .site-footer .script-heading {
+        font-size: 3rem;
+    }
+
+    .social-links {
+        gap: 15px;
+    }
+
+    .social {
+        width: 50px;
+        height: 50px;
+        font-size: 1.6rem;
+    }
+
 }
-/* ==========================================
-END OF INDEX PAGE
-========================================== */
+
 
 /* ==========================================
-START OF THANK YOU PAGE
+   EXTRA SMALL MOBILE
+   400px AND BELOW
 ========================================== */
+
+@media (max-width: 400px) {
+
+    .hero-copy {
+        padding: 15px 15px 20px;
+    }
+
+    .brand-script {
+        font-size: clamp(3.5rem, 16vw, 4.5rem);
+    }
+
+    .hero-media {
+        height: 220px;
+    }
+
+    .section {
+        padding: 28px 15px;
+    }
+
+    .orders-media {
+        width: 80%;
+    }
+
+    .contact-panel {
+        padding: 22px 15px;
+    }
+
+}
+
+
+/* ==========================================
+   END OF INDEX PAGE
+========================================== */
+
+
+/* ==========================================
+   START OF THANK YOU PAGE
+========================================== */
+
+
+/* ==========================================
+   THANK YOU PAGE LAYOUT
+========================================== */
+
 .thank-you-page {
     min-height: 100vh;
     min-height: 100dvh;
@@ -583,8 +945,14 @@ START OF THANK YOU PAGE
 
     padding: 40px 20px;
 
-    background: radial-gradient(circle at 50% 15%, #fffaf7 0%, #fcf7f3 55%, #f8eee9 100%);
+    background: radial-gradient(
+        circle at 50% 15%,
+        #fffaf7 0%,
+        #fcf7f3 55%,
+        #f8eee9 100%
+    );
 }
+
 
 /* ==========================================
    THANK YOU CARD
@@ -603,8 +971,10 @@ START OF THANK YOU PAGE
 
     text-align: center;
 
-    box-shadow: 0 18px 55px rgba(80, 36, 52, 0.08);
+    box-shadow:
+        0 18px 55px rgba(80, 36, 52, 0.08);
 }
+
 
 /* ==========================================
    DECORATIVE HEART
@@ -629,6 +999,7 @@ START OF THANK YOU PAGE
     line-height: 1;
 }
 
+
 /* ==========================================
    SMALL HEADING
 ========================================== */
@@ -642,6 +1013,7 @@ START OF THANK YOU PAGE
 
     color: var(--accent);
 }
+
 
 /* ==========================================
    MAIN TITLE
@@ -658,6 +1030,7 @@ START OF THANK YOU PAGE
 
     color: var(--accent);
 }
+
 
 /* ==========================================
    DECORATIVE DIVIDER
@@ -686,6 +1059,7 @@ START OF THANK YOU PAGE
     background: var(--line);
 }
 
+
 /* ==========================================
    SUBTITLE
 ========================================== */
@@ -700,6 +1074,7 @@ START OF THANK YOU PAGE
     color: var(--text);
 }
 
+
 /* ==========================================
    DESCRIPTION
 ========================================== */
@@ -712,8 +1087,9 @@ START OF THANK YOU PAGE
     font-size: 1rem;
     line-height: 1.85;
 
-    color: #55505a;
+    color: var(--muted);
 }
+
 
 /* ==========================================
    BACK HOME BUTTON
@@ -725,7 +1101,6 @@ START OF THANK YOU PAGE
     justify-content: center;
 
     gap: 14px;
-
     min-height: 50px;
 
     padding: 12px 32px;
@@ -756,6 +1131,7 @@ START OF THANK YOU PAGE
     outline-offset: 4px;
 }
 
+
 /* ==========================================
    BOTTOM NOTE
 ========================================== */
@@ -769,11 +1145,13 @@ START OF THANK YOU PAGE
     color: var(--accent-light);
 }
 
+
 /* ==========================================
-   MOBILE RESPONSIVENESS
+   THANK YOU MOBILE RESPONSIVENESS
 ========================================== */
 
 @media (max-width: 600px) {
+
     .thank-you-page {
         padding: 25px 15px;
     }
@@ -809,8 +1187,8 @@ START OF THANK YOU PAGE
     .thank-you-note {
         font-size: 1.9rem;
     }
-}
 
+}
 /* ==========================================
    END OF THANK YOU PAGE
 ========================================== */
